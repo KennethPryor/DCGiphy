@@ -1,13 +1,13 @@
 $(document).ready(function () {
     const heroArray = ['Batman', 'Superman', 'Aquaman', 'The Flash', 'Green Arrow', 'Wonder Woman', 'Green Lantern', 'Martian Manhunter', 'Supergirl', 'John Constantine', 'Hawkgirl', 'Shazam', 'Cyborg',];
-    const villanArray = ['Joker', 'Doomsday', 'Manta', 'Reverse Flash', 'Deathstroke', 'Circe', 'Sinestro', 'Malefic', 'Harley Quinn', 'Captain Cold', 'Swamp Thing','Posion Ivy']
+    const villanArray = ['Joker', 'Doomsday', 'Black Manta', 'Reverse Flash', 'Deathstroke', 'Brainiac', 'Sinestro', 'Malefic', 'Harley Quinn', 'Captain Cold', 'Swamp Thing','Poison Ivy', 'Gorilla Grodd']
     
     // const queryURL = 'https://sectionpi.giphy.com/v1/gifs/search?api_key=KfxqmH8qaOAQTGY9tKXE1jkFGXWvY23q&q=' + comicbookchar + '&limit=10&offset=0&rating=PG-13&lang=en'
     function CreateButtons4ArrayHeros() {
         for (var i = 0; i < heroArray.length; i++) {
           var heros = $("<button>");
           heros.addClass("btn btn-dark gifBtn");
-          heros.attr("data-person", heroArray[i]);
+          heros.attr("data-person", 'DC ' + heroArray[i]);
           heros.text(heroArray[i]);
           $('#CharBtn').append(heros);
             console.log(heroArray[i]);
@@ -53,13 +53,14 @@ $(document).ready(function () {
     $(".gifBtn").on("click", function () {
         const comicbookchar = $(this).attr("data-person");
         const queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-            comicbookchar + "&api_key=dc6zaTOxFJmzC&limit=10";
+            comicbookchar + "&api_key=dc6zaTOxFJmzC&limit=12";
         console.log()
         $.ajax({
             url: queryURL,
             method: "GET"
         })
             .then(function (response) {
+                $('#gifs-here').empty();
                 console.log(response);
                 console.log(queryURL);
                 const results = response.data;
