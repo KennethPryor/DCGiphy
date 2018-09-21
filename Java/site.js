@@ -8,13 +8,21 @@ $(document).ready(function () {
             console.log(heroArray[i]);
         }
     };
-    CreateButtons4ArrayHeros();
-    // function CreateButtons4ArrayVillans () {
-    //     for (var i = 0; i < villanArray.length; i++) {
-    //       document.getElementById("CharBtn").innerHTML += '<button data-person=' + villanArray[i] + ' class="btn btn-dark gifBtn">' + villanArray[i] + '</button>';
-    //       console.log(villanArray[i]);
-    //     }
-    //   };
+    function CreateButtons4ArrayVillans () {
+        for (var i = 0; i < villanArray.length; i++) {
+          document.getElementById("CharBtn").innerHTML += '<button data-person=' + villanArray[i] + ' class="btn btn-dark gifBtn">' + villanArray[i] + '</button>';
+          console.log(villanArray[i]);
+        }
+      };
+    if ($('body').hasClass("herospage")) {
+        console.log('Hero Page Viewed')
+        CreateButtons4ArrayHeros();
+    } else if ($('body').hasClass("villanspage")) {
+        console.log('Villan Page Viewed')
+        CreateButtons4ArrayVillans();
+    } else {
+        console.log('View Hero or Villan page')
+    }
 
 
 
