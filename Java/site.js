@@ -1,16 +1,26 @@
 $(document).ready(function () {
     const heroArray = ['Batman', 'Superman', 'Aquaman', 'The Flash', 'Green Arrow', 'Wonder Woman', 'Green Lantern', 'Martian Manhunter', 'Supergirl', 'John Constantine', 'Hawkgirl', 'Shazam', 'Cyborg',];
-    const villanArray = ['Joker', 'Doomsday', 'Manta', 'Reverse Flash', 'Deathstroke', 'Circe', 'Sinestro', 'Malefic', 'Harley Quinn', 'Captain Cold', 'Swamp Thing',]
+    const villanArray = ['Joker', 'Doomsday', 'Manta', 'Reverse Flash', 'Deathstroke', 'Circe', 'Sinestro', 'Malefic', 'Harley Quinn', 'Captain Cold', 'Swamp Thing','Posion Ivy']
+    
     // const queryURL = 'https://sectionpi.giphy.com/v1/gifs/search?api_key=KfxqmH8qaOAQTGY9tKXE1jkFGXWvY23q&q=' + comicbookchar + '&limit=10&offset=0&rating=PG-13&lang=en'
     function CreateButtons4ArrayHeros() {
         for (var i = 0; i < heroArray.length; i++) {
-            document.getElementById("CharBtn").innerHTML += '<button data-person=' + heroArray[i] + ' class="btn btn-dark gifBtn">' + heroArray[i] + '</button>';
+          var heros = $("<button>");
+          heros.addClass("btn btn-dark gifBtn");
+          heros.attr("data-person", heroArray[i]);
+          heros.text(heroArray[i]);
+          $('#CharBtn').append(heros);
             console.log(heroArray[i]);
         }
     };
     function CreateButtons4ArrayVillans () {
         for (var i = 0; i < villanArray.length; i++) {
-          document.getElementById("CharBtn").innerHTML += '<button data-person=' + villanArray[i] + ' class="btn btn-dark gifBtn">' + villanArray[i] + '</button>';
+          var villans = $("<button>");
+          villans.addClass("btn btn-dark gifBtn");
+          villans.attr("data-person", villanArray[i]);
+          villans.text(villanArray[i]);
+          $('#CharBtn').append(villans);
+          
           console.log(villanArray[i]);
         }
       };
