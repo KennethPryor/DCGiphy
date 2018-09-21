@@ -1,0 +1,81 @@
+body {
+    background-image: url(../Images/EarthBG.jpg);
+    
+}
+.circle {
+    height: 115px;
+    width: 115px;
+    background-color: #212529;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 47.5%;
+  }
+.DClogo {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.HDiv {
+    text-align: center;
+    width: 75%;
+    margin-top: 8%;
+    margin-left: 12.5%;
+    color: white;
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 1px solid white;
+}
+
+h3 {
+    color: aliceblue;
+}
+#CharBtn {
+    margin-top: 55px;
+}
+.gifBtn {
+    margin: 5px;
+}
+.card {
+    margin: 10px;
+}
+#gifs-here {
+    display: inline;
+    align-content: center;
+}
+section {
+    display: inline;
+}
+.centerbox {
+    background-color:rgba(0, 0, 0, 0.5);
+    border: #777777 1px solid;
+    padding: 10px;
+    width: 960px ;
+    margin: 10px auto;
+    margin-top: 75px;
+    text-align: center;
+    color: white;
+}
+.fa-linkedin {
+    color: white;
+  }
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.fa-github {
+    color: white;
+}
+#gifcard {
+    float: left;
+    text-align: left;
+}
+.card-img-top {
+    width: 18rem;
+    height: 14rem;
+}
