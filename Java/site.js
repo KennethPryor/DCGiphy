@@ -40,13 +40,16 @@ $(document).ready(function () {
 
 
     $("#searchGifs").on("click", function () {
-        $("#searchBar").val(comicbookchar);
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-        });
+        const searchItem = $("#searchBar").val();
+            console.log(searchItem);
+            var searchItembutton = $("<button>");
+            searchItembutton.addClass("gifBtn btn btn-dark ");
+            searchItembutton.attr("data-person", searchItem);
+            // searchItembutton.attr('class', 'gifBtn btn btn-dark');
+            searchItembutton.text(searchItem);
+            $('#CharBtn').append(searchItembutton);
+            console.log(searchItembutton)
+        
 
 
     });
@@ -70,24 +73,19 @@ $(document).ready(function () {
                     console.log(rating);
                     var gifCard = $(`
                     <section id="gifcard" class="card text-white bg-dark">
-                    <img class="card-img-top" src="${results[i].images.fixed_height.url}">
+                    <img class="card-img-top"  src="${results[i].images.fixed_height_still.url}" data-still="${results[i].images.fixed_height_still.url}" data-animate="${results[i].images.fixed_height.url}" data-state="still">
                     <section class="card-body">
                     <h3 class="card-title">Rating: ${rating}</h3>
                     </section>
                     </section>
                     `);
-                    // ("Rating: " + rating);
-                    // var comicbookcharImage = $("<img>");
-                    // comicbookcharImage.attr("src", );
-                    // gifDiv.append(gifCard);
-                    // gifDiv.append(comicbookcharImage);
                     $("#gifs-here").append(gifCard);
 
 
                 }
             });
     });
-    $("#gifcard").on("click", function() {
+    $("#gifs-here").on("click", "img" ,  function() {
         var state = $(this).attr("data-state");
         if (state === "still") {
           $(this).attr("src", $(this).attr("data-animate"));
